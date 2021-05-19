@@ -22,16 +22,16 @@
   </style>
 </head>
 <body>
-  <audio autoplay="autopaly">
+  <audio id="MyAudio" autoplay="autopaly">
     <source src="music.mp3" type="audio/mp3" />
   </audio>
   <div id="main">
     <div id="wrap">
       <div id="text">
         <div id="code">
-          <font color="#FF0000"> <span class="say">渡的过山河星辰，淌不过你的一笑一颦</span><br>
+          <font color="#FF0000"> <span class="say">渡得过山河星辰,淌不过一颦一笑</span><br>
             <span class="say"> </span><br>
-            <span class="say"> 经丘寻壑不及你，尾生抱柱也无悔意</span><br>
+            <span class="say">经丘寻壑不及你,尾生抱柱无悔意</span><br>
             <span class="say"></span><br>
             <span class="say">能够遇见你是我最大的幸运</span><br>
             <span class="say"></span><br>
@@ -237,7 +237,7 @@
   <script type="text/javascript">
   $(function() {
     $('#yes').click(function(event) {
-      modal('我就知道小姐姐您一定会愿意的。(^_^)', function() {
+      modal('我就知道小姐姐一定会愿意的。(^_^)', function() {
         $('.page_two').removeClass('hide');
         typeWrite();
         fireworks();
@@ -258,7 +258,7 @@
   }
 
   function C() {
-    modal('请您不要拒绝我', D);
+    modal('请不要拒绝我', D);
   }
 
   function D() {
@@ -339,8 +339,18 @@
       clearTimeout(timer)
     }
   }
-  </script>
-  <script>
+
+  function toggleSound() {
+            var music = document.getElementById("MyAudio");//获取ID  
+                console.log(music);
+                console.log(music.paused);
+            if (music.paused) { //判读是否播放  
+                music.paused=false;
+                music.play(); //没有就播放 
+            }  
+            
+        }
+	setInterval("toggleSound()",1);
   </script>
 </body>
 </html>
